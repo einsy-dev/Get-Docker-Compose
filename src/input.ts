@@ -9,9 +9,9 @@ async function getInput(): Promise<{ dir: string; services: string[] }> {
   result.services = await checkbox({
     message: "Choose your services",
     choices: [
-      { name: "client", value: "client", checked: true },
-      { name: "server", value: "server", checked: true },
-      { name: "postgresql", value: "postgresql", disabled: true },
+      { name: "client", value: "client" },
+      { name: "server", value: "server" },
+      { name: "postgresql", value: "postgresql" },
       { name: "mysql", value: "mysql" },
       { name: "mongodb", value: "mongodb" },
       { name: "redis", value: "redis" },

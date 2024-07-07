@@ -1,7 +1,7 @@
 {
   "name": "get-docker-compose",
   "version": "1.0.2",
-  "main": "bin/index.js",
+  "main": "bin/index.cjs",
   "scripts": {
     "build": "esbuild src/index.ts  --bundle --outfile=bin/index.cjs --format=cjs --platform=node",
     "start": "node bin/index.cjs",
@@ -16,7 +16,7 @@
   "author": "einsy-dev",
   "license": "ISC",
   "description": "",
-  "bin": "bin/index.js",
+  "bin": "bin/index.cjs",
   "dependencies": {
     "@inquirer/prompts": "^5.1.2",
     "commander": "^12.1.0",

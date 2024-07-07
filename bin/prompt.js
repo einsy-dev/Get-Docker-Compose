@@ -1,38 +1,15 @@
-const prompts = [
-	// {
-	// 	name: 'name',
-	// 	message: 'Your Name?',
-	// 	validate: function (name) {
-	// 		if (!name) {
-	// 			return "Name is required"
-	// 		}
-	// 		return true
-	// 	}
-	// },
-	// {
-	// 	name: 'bun',
-	// 	message: 'Choose a bun?',
-	// 	type: 'rawlist',
-	// 	choices: ['Classic', 'Whole Wheat', 'Gluten Free'],
-	// 	default: 'Classic'
-	// },
-	// {
-	// 	name: 'toppings',
-	// 	message: 'Choose your favourite toppings',
-	// 	type: 'checkbox',
-	// 	choices: ['Tomato', 'Lettuce', 'Cheese', 'Onion']
-	// },
+export default [
 	{
-		name: 'sauces',
-		message: 'Choose your favourite sauces',
-		type: 'checkbox',
-		choices: ['Mayonnaise', 'Ketchup', 'Mustard']
+		name: 'dir',
+		message: 'Choose your directory',
+		type: 'input',
+		default: './',
 	},
 	{
-		name: 'test',
-		message: 'Choose your favourite sauces',
+		name: 'services',
+		message: 'Choose your services',
 		type: 'checkbox',
-		choices: ['Mayonnaise', 'Ketchup', 'Mustard']
+		choices: ['client', 'server', 'postgresql', 'mysql', 'mongodb', 'redis', 'nginx'],
+		default: ['client', 'server', 'postgresql'],
 	},
 ]
-export default prompts;

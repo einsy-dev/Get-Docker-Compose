@@ -1,6 +1,6 @@
-# simple script to generate docker-compose file
+# docker-compose generator
 
-## Run this script
+## Run this script to generate docker-compose.yml
 
 ```bash
 npx get-docker-compose

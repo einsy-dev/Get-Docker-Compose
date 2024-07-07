@@ -1,9 +1,8 @@
 #! /usr/bin/env node
 
-import * as fs from "fs";
-import * as ejs from "ejs";
-import * as path from "path";
+import { read, write, indexInsert } from "./fs";
 import getInput from "./input";
+
 import { Command } from "commander";
 const program = new Command();
 
@@ -12,30 +11,12 @@ program
   .description("Generate a docker-compose file")
   .version("1.0.0")
   .action(async () => {
-    const res = await getInput();
-		await write(res);
+    const { dir, services } = await getInput();
+    const template = await services
+      .map((service: string) => {
+        return read(`./template/${service}.yml`);
+      })
+      .join("\n\n");
+    write(`${dir}/docker-compose.yml`, indexInsert("services:", template));
   })
   .parse();
-path.resolve(__dirname, "./docker-compose.yml");
-
-async function write({ dir, services }: any) {
-  const index = fs.readFileSync(
-    path.resolve(__dirname, "./template/index.yml"),
-    "utf8"
-  );
-  const template = await services
-    .map((service: string) => {
-      return fs.readFileSync(
-        path.resolve(__dirname, `./template/${service}.yml`),
-        "utf8"
-      );
-    })
-    .join("\n\n");
-
-  fs.writeFileSync(
-    `${dir}/docker-compose.yml`,
-    ejs.render(index, { services: template }),
-    "utf8"
-  );
-  return 1;
-}

@@ -1,6 +1,0 @@
-services:
-<%= services %>
-
-networks:
-  server:
-    driver: bridge

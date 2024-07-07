@@ -1,7 +1,0 @@
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - /var/www/html:/usr/share/nginx/html
-    restart: always

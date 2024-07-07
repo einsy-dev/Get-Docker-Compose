@@ -2,19 +2,30 @@
   "name": "get-docker-compose",
   "version": "1.0.1",
   "main": "bin/index.js",
-  "type": "module",
   "scripts": {
+    "build": "tsc",
     "start": "node bin/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "docker",
+    "docker-compose",
+    "npx",
+    "get-docker-compose"
+  ],
+  "author": "einsy-dev",
   "license": "ISC",
   "description": "",
   "bin": "bin/index.js",
   "dependencies": {
+    "@inquirer/prompts": "^5.1.2",
     "commander": "^12.1.0",
-    "ejs": "^3.1.10",
-    "inquirer": "^9.3.4"
+    "ejs": "^3.1.10"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3"
   }
 }

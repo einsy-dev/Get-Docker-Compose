@@ -1,6 +1,6 @@
 {
   "name": "get-docker-compose",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "bin/index.js",
   "scripts": {
     "build": "esbuild src/index.ts  --bundle --outfile=bin/index.cjs --format=cjs --platform=node",

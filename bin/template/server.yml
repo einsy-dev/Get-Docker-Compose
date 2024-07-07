@@ -1,0 +1,10 @@
+  server:
+    container_name: server
+    build: ./server/
+    env_file:
+      - .env
+    ports:
+      - 8001:8000
+    networks:
+      - backend
+    restart: always

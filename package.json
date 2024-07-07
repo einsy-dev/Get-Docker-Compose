@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "main": "bin/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node bin/index.js",
+    "build": "esbuild src/index.ts  --bundle --outfile=bin/index.cjs --format=cjs --platform=node",
+    "start": "node bin/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,6 +26,7 @@
     "@types/ejs": "^3.1.5",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.14.10",
+    "esbuild": "^0.23.0",
     "typescript": "^5.5.3"
   }
 }

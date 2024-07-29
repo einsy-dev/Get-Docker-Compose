@@ -6,4 +6,5 @@
     ports:
       - 8001:8000
     restart: if-failed
-    networks: backend
+    networks: 
+      - backend

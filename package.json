@@ -1,6 +1,6 @@
 {
   "name": "get-docker-compose",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "bin/index.cjs",
   "scripts": {
     "build": "npm run copy && esbuild src/index.ts  --bundle --outfile=bin/index.cjs --format=cjs --platform=node",

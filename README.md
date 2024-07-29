@@ -25,21 +25,20 @@ services:
     ports:
       - 8001:8000
     restart: if-failed
-    networks: backend
+    networks:
+      - backend
 
-mongodb:
-  container_name: mongodb
-  image: mongodb:latest
-  ports:
-    - 27017:27017
-  environment:
-    MONGO_INITDB_ROOT_USERNAME: root
-    MONGO_INITDB_ROOT_PASSWORD: root
-  volumes:
-    - mongodb_data:/data/db
-  restart: always
-  networks: backend
-
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    restart: always
+    networks:
+      - backend
 
 networks:
   backend:

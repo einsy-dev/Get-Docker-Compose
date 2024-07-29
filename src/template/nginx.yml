@@ -1,7 +1,13 @@
   nginx:
+    container_name: nginx
     image: nginx:latest
     ports:
       - "80:80"
+    environment:
+      - ALLOW_ORIGIN=*
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
     volumes:
       - /var/www/html:/usr/share/nginx/html
     restart: always
+    networks: backend

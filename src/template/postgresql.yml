@@ -7,6 +7,4 @@
       - .env
     volumes:
       - ./pgdata:/var/lib/postgresql/data
-    networks:
-      - backend
     restart: always

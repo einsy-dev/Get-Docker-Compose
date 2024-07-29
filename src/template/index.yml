@@ -1,5 +1,2 @@
 services:
 
-networks:
-  server:
-    driver: bridge
